@@ -33,11 +33,17 @@ Ranked Material Recommendations
 ## 📁 Repository Structure
 
 materials-ml-decision-engine/
+
 │
+
 ├── data/
+
 │ ├── raw/ # Scraped raw CSVs
+
 │ ├── cleaned/ # Cleaned CSVs
+
 │ ├── materials_final.csv # Final enriched dataset
+
 │
 ├── notebooks/
 │ ├── scraping.ipynb
