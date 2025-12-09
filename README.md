@@ -58,8 +58,3 @@ See folder tree in the repository root.
 - Technical paper and final report
 
 ---
-
-## 🔧 Requirements
-
-```bash
-pip install -r requirements.txt
