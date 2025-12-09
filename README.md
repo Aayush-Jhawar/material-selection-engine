@@ -1,60 +1,120 @@
-# 🌐 Materials Selection Engine  
-_A complete end-to-end computational pipeline for engineering material selection using scraped data, environmental metrics, and multi-criteria decision making._
+# 🧪 Materials-ML Decision Engine  
+### A Data-Driven Material Selection System using Scraping → Cleaning → Category-Aware Imputation → PCA/KMeans → TOPSIS Scoring
 
-## 🔍 Project Overview
-This project builds a fully automated material-selection decision engine by integrating:
-
-- **Custom web-scraping** of 2,500+ materials from MatWeb  
-- **Data cleaning + error correction** for noisy scraped CSVs  
-- **Category-aware weighted imputation** for missing values  
-- **Environmental impact integration** (CO₂ per kg, recyclability, embodied energy)  
-- **Economic factors** (scraped cost values)  
-- **ML and MCDM techniques**:  
-  - PCA for dimensionality reduction  
-  - TOPSIS for ranking  
-  - Weighted scoring based on engineering relevance  
-
-The final output is a **ranked list of materials** optimized for engineering, environmental, and cost constraints.
+<img src="header_image.png" width="100%" />
 
 ---
 
-## 🚀 Features
+## 📌 Project Overview
+This repository contains an **end-to-end machine learning pipeline** developed as part of the DES646 Practical Project.  
+Unlike typical datasets sourced from Kaggle or GitHub, this project builds a **fully custom dataset from scratch** using:
 
-### ✔ 1. Robust Scraping System  
-- Playwright-based automated scraper  
-- Extracts complete property tables for every material  
-- Handles pagination, tokenized forms, and dynamic content
+- ✔️ **Web scraping** (MatWeb) — 2,400+ materials  
+- ✔️ **Manual & automated data cleaning for malformed CSVs**  
+- ✔️ **Category-aware imputation** using weighted ontology  
+- ✔️ **Integration of sustainability metrics** (CO₂ footprint)  
+- ✔️ **Cost estimation** using marketplace scraping  
+- ✔️ **Feature scaling, PCA, clustering, correlations**  
+- ✔️ **TOPSIS-based multi-criteria decision scoring**  
+- ✔️ **Final ranked material recommendations**
 
-### ✔ 2. Intelligent Cleaning Pipeline  
-- Removes corrupted rows, misaligned fields, and text-embedded units  
-- Unit normalization (e.g., GPa → MPa, g/cc → kg/m³)  
-- Parsed structured numeric values from complex formats
+The system combines **engineering, economic and environmental factors** into a unified decision engine.
 
-### ✔ 3. Weighted Category-Based Imputation  
-Missing values are filled using proportional weights from all category levels:
-- Main category weight = 0.6  
-- Subcategory weight = 0.3  
-- Additional categories weight = 0.1  
+---
 
-This ensures imputed values match material families realistically.
+## 🗂 Pipeline Architecture
 
-### ✔ 4. Multi-Criteria Decision Making  
-- Robust scaling  
-- PCA variance analysis  
-- TOPSIS scoring  
-- Final ranking table for all materials
+Scraping → Cleaning → Normalisation →
+Category-Weighted Imputation →
+CO₂ & Cost Integration → Scaling → PCA →
+KMeans Clustering → TOPSIS Scoring →
+Ranked Material Recommendations
 
 ---
 
 ## 📁 Repository Structure
-See folder tree in the repository root.
+
+materials-ml-decision-engine/
+│
+├── data/
+│ ├── raw/ # Scraped raw CSVs
+│ ├── cleaned/ # Cleaned CSVs
+│ ├── materials_final.csv # Final enriched dataset
+│
+├── notebooks/
+│ ├── scraping.ipynb
+│ ├── cleaning.ipynb
+│ ├── imputation.ipynb
+│ ├── ml_pipeline.ipynb
+│ ├── analysis.ipynb
+│
+├── src/
+│ ├── scraper.py
+│ ├── cleaner.py
+│ ├── imputation.py
+│ ├── scoring.py
+│ ├── utils.py
+│
+├── results/
+│ ├── pca_plots/
+│ ├── correlation_matrix.png
+│ ├── topsis_distribution.png
+│ ├── ranked_materials.csv
+│
+└── README.md
 
 ---
 
-## 📊 Outputs
-- Ranked materials CSV  
-- All intermediate cleaned datasets  
-- PCA plots, correlation matrices, TOPSIS distributions  
-- Technical paper and final report
+## 🔍 Key Features
+
+### **1. Custom Web Scraper**
+- Handles JavaScript-generated pages  
+- Extracts full material property tables  
+- Captures 32+ physical, mechanical, thermal and optical properties  
+
+---
+
+### **2. Intelligent Data Cleaning**
+- Fixes misaligned rows  
+- Removes malformed embedded commas  
+- Filters out non-numeric fragments like `"4.6 @ Frequency"`  
+- Normalises units  
+
+---
+
+### **3. Category-Aware Imputation (Novel Contribution)**
+Each material belongs to multiple classes, e.g.:
+Ceramic → Oxide → Aluminium Oxide
+
+Weighted imputation:
+
+- 1 category → 100% weight  
+- 2 categories → 0.75 + 0.25  
+- 3 categories → 0.6 + 0.3 + 0.1  
+
+This preserves *engineering meaning* and avoids unrealistic averages.
+
+---
+
+### **4. ML Pipeline**
+- RobustScaler → PCA  
+- KMeans clustering  
+- Correlation analysis  
+- TOPSIS scoring (multi-criteria decision making)  
+
+Scores integrate:
+
+- Performance  
+- Cost  
+- Environmental footprint  
+
+---
+
+### **5. Outputs**
+- Ranked material list  
+- PCA visualisation  
+- Cluster map  
+- TOPSIS distribution  
+- Correlation matrix  
 
 ---
