@@ -1,8 +1,6 @@
 # 🧪 Materials-ML Decision Engine  
 ### A Data-Driven Material Selection System using Scraping → Cleaning → Category-Aware Imputation → PCA/KMeans → TOPSIS Scoring
 
-<img src="header_image.png" width="100%" />
-
 ---
 
 ## 📌 Project Overview
