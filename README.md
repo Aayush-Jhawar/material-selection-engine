@@ -42,7 +42,7 @@ materials-ml-decision-engine/
 
 │ ├── cleaned/ # Cleaned CSVs
 
-│ ├── materials_final.csv # Final enriched dataset
+│ ├── processed # Final enriched datasets
 
 │
 
