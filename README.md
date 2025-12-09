@@ -45,26 +45,25 @@ materials-ml-decision-engine/
 │ ├── materials_final.csv # Final enriched dataset
 
 │
-├── notebooks/
-│ ├── scraping.ipynb
-│ ├── cleaning.ipynb
-│ ├── imputation.ipynb
+
+├── analysis/
+
 │ ├── ml_pipeline.ipynb
+
 │ ├── analysis.ipynb
+
 │
+
 ├── src/
+
 │ ├── scraper.py
-│ ├── cleaner.py
-│ ├── imputation.py
-│ ├── scoring.py
-│ ├── utils.py
+
+│ ├── data_cleaning/ # Codes for cleaning and imputation
+
+│ ├── data_merging/ # Merge Cost and Environmental data
+
 │
-├── results/
-│ ├── pca_plots/
-│ ├── correlation_matrix.png
-│ ├── topsis_distribution.png
-│ ├── ranked_materials.csv
-│
+
 └── README.md
 
 ---
